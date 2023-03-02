@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\UserController;
+use \App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,16 @@ use \App\Http\Controllers\Api\UserController;
 |
 */
 
+Route::bind('user', function($value) {
+    return User::where('id', $value)->first();
+});
+
+Route::get('test', function() {
+    App\Jobs\UpdateUserWeatherReport::dispatch();
+    dd('dispatched!');
+});
+
 Route::get('/', [\App\Http\Controllers\Api\UserController::class, 'index'])->name('users.index');
+Route::get('/{user}', [\App\Http\Controllers\Api\UserController::class, 'view'])->name('users.view');
+
 

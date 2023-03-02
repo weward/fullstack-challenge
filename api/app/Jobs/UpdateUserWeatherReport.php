@@ -37,7 +37,7 @@ class UpdateUserWeatherReport implements ShouldQueue
         User::orderBy('id')
         ->chunk(1000, function($users) {
             foreach ($users as $user) {
-                $data = $this->getWeatherdata($user->lat, $user->lng);
+                $data = $this->getWeatherdata($user->latitude, $user->longitude);
 
                 $data = json_encode($data) ?: null;
 
@@ -57,7 +57,7 @@ class UpdateUserWeatherReport implements ShouldQueue
 
     protected function getWeatherdata($lat, $lng)
     {
-        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?lat=14.824243&lon=121.054822&appid={$this->apiKey}");
+        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?lat={$lat}&lon={$lng}&appid={$this->apiKey}");
      
         if ($response->successful()) {
             return $response->json();
