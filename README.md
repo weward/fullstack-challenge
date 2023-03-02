@@ -25,6 +25,7 @@ Completion Time: around 6 hours
     - `OPENWEATHERMAP_APP_ID`
 - Added `config/api.php` file for weather API configuration
 - Added `Predis` composer package
+- Updated `.env` file: `REDIS_CLIENT=predis`
 - Added `WeatherReport` model
 - Added `UsersController` controller
 - Updated `api.php` route file
