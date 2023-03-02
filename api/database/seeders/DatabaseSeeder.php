@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory(20)->create();
-        UpdateUserWeatherReport::dispatch();
+        \App\Jobs\UpdateUserWeatherReport::dispatch();
     }
 }

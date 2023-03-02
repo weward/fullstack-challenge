@@ -13,11 +13,7 @@ Completion Time: around 6 hours
 ## Instructions
 
 - This needs an API ID for `OPENWEATHERMAP_APP_ID` in the `.env` file
-- Seed the db along with the UserSeeder:
 
-```
-
-```
 
 .
 ## My Inputs
