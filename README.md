@@ -1,5 +1,21 @@
 # Fullstack Challenge
 
+## My Inputs
+- Added a migration for Weather Reports `weather_reports`
+- Scheduled `UpdateUserWeatherReport` Job to run every hour and update each user's record inside `weather_reports` table
+- Store the results in `Redis` as well as in `MySQL`
+- Added `.env` variables for weather API keys
+    - `WEATHER_API`
+    - `OPENWEATHERMAP_APP_ID`
+- Added `config/api.php` file for weather API configuration
+- Added `Predis` composer package
+- Added `WeatherReport` model
+- Added `UsersController` controller
+- Updated `api.php` route file
+- Added Tests
+
+
+
 ## Instructions
 Using Laravel and VueJS, create an application which shows the weather for a set of users.
 - Clone this repository. 
