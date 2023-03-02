@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+span.nav-logo {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 18px;
+    color: #cede9c;
+}
+
+span.nav-logo-bottom {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    color: #ffffff;
+}
+
+.p-menubar .p-menubar-root-list {
+    outline: 0 none;
+    width: 100%;
+}
+
+a.router-link-active.router-link-exact-active.nav-label {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.w-80 {
+    width: 90%;
+    max-width: 90%;
+}
+
+.m-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.tbl-item {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.tbl-label {
+    width: 49.5%;
+    display: inline-block;
+    font-weight: 600;
+    color: #cecece;
+}
+
+.tbl-value {
+    display: inline-block;
+    width: 49%;
+    font-size: .85rem;
+    font-style: italic;
+    text-align: right;
+}
+
+td.text-dark {
+    color: #333;
+}
+
+.text-bold {
+    font-weight: 600;
+}
