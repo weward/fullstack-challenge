@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // Run the Update User weather report job hourly
-        $schedule->job(new UpdateUserWeatherReport)->everyMinute();
+        $schedule->job(new UpdateUserWeatherReport)->hourly();
     }
 
     /**
