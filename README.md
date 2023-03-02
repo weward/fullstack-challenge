@@ -1,5 +1,25 @@
 # Fullstack Challenge
 
+## Author
+
+```
+Name: Roland Edward B. Santos
+Email: dev.weward@gmail.com
+Bitbucket: https://bitbucket.org/rolandedwardsantos
+Completion Time: around 6 hours
+```
+
+
+## Instructions
+
+- This needs an API ID for `OPENWEATHERMAP_APP_ID` in the `.env` file
+- Seed the db along with the UserSeeder:
+
+```
+
+```
+
+.
 ## My Inputs
 - Added a migration for Weather Reports `weather_reports`
 - Scheduled `UpdateUserWeatherReport` Job to run every hour and update each user's record inside `weather_reports` table
@@ -15,7 +35,7 @@
 - Added Tests
 
 
-
+.
 ## Instructions
 Using Laravel and VueJS, create an application which shows the weather for a set of users.
 - Clone this repository. 

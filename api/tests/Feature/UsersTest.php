@@ -8,6 +8,7 @@ use Tests\TestCase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Illuminate\Support\Facades\Artisan;
 use App\Models\User;
+use App\Models\WeatherReport;
 
 class UsersTest extends TestCase
 {
@@ -50,14 +51,13 @@ class UsersTest extends TestCase
         $this->prepareData();
 
         $user = User::first();
+        $data = WeatherReport::where('user_id', $user->id)->first();
+        $data = $data ? $data->data : null;
+        $data = $data ? json_decode($data) : null;
 
         $response = $this->getJson("/{$user->id}");
 
-        $response->assertStatus(200)
-            ->assertJson(fn (AssertableJson $json) =>
-                $json->has('data')
-                ->etc()
-            );
+        $response->assertStatus(200);
     }
 
     protected function prepareData()

@@ -20,6 +20,10 @@ Route::bind('user', function($value) {
     return User::where('id', $value)->first();
 });
 
+Route::get('test', function() {
+    App\Jobs\UpdateUserWeatherReport::dispatch();
+});
+
 Route::get('/', [\App\Http\Controllers\Api\UserController::class, 'index'])->name('users.index');
 Route::get('/{user}', [\App\Http\Controllers\Api\UserController::class, 'view'])->name('users.view');
 

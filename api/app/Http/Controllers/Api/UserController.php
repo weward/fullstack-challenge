@@ -9,17 +9,18 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+ 
     public function index()
-    {
-        $users = User::all();
+    {   
+        $users = User::select('id', 'name')->get();
 
         if ($users->count()) {
             foreach ($users as &$user) {
                 $data = Redis::get("user_{$user->id}");
                 $data = $data ? json_decode($data) : null;
                 if ($data) {
-                    $user->weather = $data->weather[0]->description;
-                    $user->temperature = temperature($data->main->temp, 'fahrenheit');
+                    $user->weather = $data->description->value;
+                    $user->temperature = $data->temp->value;
                 }
             }
         }
@@ -33,11 +34,10 @@ class UserController extends Controller
     public function view(Request $request, User $user)
     {   
         $data = Redis::get("user_{$user->id}");
-        $data = $data ? json_decode($data) : null;
+        if ($data) {
+            $data = json_decode($data);
+        }
 
-        return response()->json([
-            'message' => 'User\'s Weather Data',
-            'data' => $data, 
-        ], 200);
+        return response()->json($data, 200);
     }
 }
